@@ -25,6 +25,3 @@ build/
 # Sistema operacional
 .DS_Store
 Thumbs.db
-
-# Outros
-public/assets/
