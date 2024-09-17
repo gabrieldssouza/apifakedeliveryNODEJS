@@ -1,0 +1,21 @@
+{
+  "name": "apifakedelivery",
+  "version": "1.0.0",
+  "description": "api fake para app de delivery",
+  "main": "index.js",
+  "bin": {
+    "apifakedelivery": "bin/server.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./bin/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "nodemon": "^3.1.4",
+    "json-server": "^1.0.0-beta.2"
+  }
+}
