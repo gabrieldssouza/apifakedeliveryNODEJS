@@ -56,31 +56,4 @@ app.get('/users/:id', (req, res) => {
     }
 });
 
-app.post('/signup', (req, res) => {
-    const { name, email, senha } = req.body;
-    const newUser = {
-        id: (db.users.length + 1).toString(),
-        name,
-        email,
-        senha,
-        saldo: "0.00"
-    };
-    db.users.push(newUser); 
-
-    fs.writeFileSync(dbPath, JSON.stringify(db, null, 2), 'utf-8');
-
-    res.status(201).json(newUser);
-});
-
-app.put('/users/:id/saldo', (req, res) => {
-    const user = acharId(db.users, req.params.id);
-    if (user) {
-        user.saldo = req.body.saldo;
-        fs.writeFileSync(dbPath, JSON.stringify(db, null, 2), 'utf-8');
-        res.json(user);
-    } else {
-        res.status(404).send('Usuário não encontrado');
-    }
-});
-
 module.exports = app;
